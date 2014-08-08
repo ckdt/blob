@@ -49,7 +49,9 @@
                 <fieldset><legend>Demo 1</legend>
                 <p>You have <span id="counter"></span> <span id="typetxt"></span> left.</p>
                 <p><textarea id="demo1" cols="50" rows="4"></textarea></p>
-                <p><input type="submit" value="Submit"></p>
+
+                <p><button id="my-button_textarea" data-clipboard-target="demo1">Copy to Clipboard</button></p>
+
                 </fieldset>
             </div>
 
@@ -63,9 +65,34 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/jquery.simplyCountable.js"></script>
+        <script src="js/ZeroClipboard.min.js"></script>
 
         <script>
             $(function() {
+
+                 var client = new ZeroClipboard( $("#my-button_textarea") );
+
+      client.on( 'ready', function(event) {
+        // console.log( 'movie is loaded' );
+
+        client.on( 'copy', function(event) {
+            var text = document.getElementById('demo1').value;
+            var windowsText = text.replace(/\n/g, '\r\n');
+            event.clipboardData.setData('text/plain', windowsText);
+        } );
+
+        client.on( 'aftercopy', function(event) {
+          console.log('Copied text to clipboard: ' + event.data['text/plain']);
+        } );
+      } );
+
+      client.on( 'error', function(event) {
+        // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+        ZeroClipboard.destroy();
+      } );
+
+
+
                 $("select").change(function(){
                     var $type = $(this).find(':selected').attr('data-type');
                     var $count = $(this).find(':selected').attr('data-count');
