@@ -15,63 +15,70 @@
 		<meta name="keywords" content="text length, online generator" />
 		<meta name="author" content="CKDT" />
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type='text/css' href="css/normalize.css">
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600'>
+        <link rel="stylesheet" type='text/css' href="css/style.css">
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
     </head>
     <body>
-        <div>
-        <select class="cs-select cs-skin-border">
-        	<option value="" disabled selected>Preferred contact method</option>
-        	<option value="email" data-type="words" data-count="20">E-Mail</option>
-        	<option value="twitter" data-type="characters" data-count="120">Twitter</option>
-        	<option value="linkedin" data-type="words" data-count="3">LinkedIn</option>
-        </select>
+        <header>
+            <hgroup>
+                <h1 id="logo">Blob</h1>
+                <h2>Your friendly ideal text length optimizer.</h2>
+            </hgroup>
+        </header>
 
-        </div>
+        <section id="intro">
+            <h1>Optimize text length for everything online</h1>
+            <p> Phasellus semper fermentum sagittis. Quisque eget vestibulum urna. Integer vehicula, eros nec vulputate imperdiet, lorem sem adipiscing massa, sit amet volutpat orci mauris vel metus. Suspendisse eget tempor leo. Vivamus scelerisque est nec euismod adipiscing. Duis id tempor libero. Suspendisse potenti. </p>
+        </section>
 
-        <div>
+        <section id="form">
+            <select>
+                <option value="" disabled selected>Make your selection or die trying</option>
+                <option value="domain" data-type="characters" data-count="8">Domain name (exc. extension)</option>
+                <option value="twitter" data-type="characters" data-count="100">Twitter</option>
+                <option value="facebook" data-type="characters" data-count="40">Facebook post</option>
+                <option value="e-mail" data-type="characters" data-count="34">E-mail subject</option>
+                <option value="blog" data-type="words" data-count="1600">Blog post</option>
+                <option value="title-tag" data-type="characters" data-count="55">Title tag</option>
+                <option value="headline" data-type="words" data-count="6">Headline</option>
+            </select>
+            <div id="optimizer" class="fb">
+                <fieldset><legend>Demo 1</legend>
+                <p>You have <span id="counter"></span> <span id="typetxt"></span> left.</p>
+                <p><textarea id="demo1" cols="50" rows="4"></textarea></p>
+                <p><input type="submit" value="Submit"></p>
+                </fieldset>
+            </div>
 
-        <fieldset><legend>Demo 1</legend>
-        <p>You have <span id="counter"></span> <span id="typetxt"></span> left.</p>
-        <p><textarea id="demo1" cols="50" rows="4"></textarea></p>
-        <p><input type="submit" value="Submit"></p>
-        </fieldset>
+        </section>
 
-    </div>
+        <footer>
+            <p> Brought to you by the lovely folks of CKDT </p>
+        </footer>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/jquery.simplyCountable.js"></script>
 
-        <!--
-        <script src="js/classie.js"></script>
-		<script src="js/selectFx.js"></script>
-		<script>
-			(function() {
-				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
-					new SelectFx(
-                        el,
-                        {
-                            onChange : function( val ) { console.log( this ); return false; }
-                        }
-                    );
-
-				} );
-			})();
-		</script>
--->
         <script>
             $(function() {
-
                 $("select").change(function(){
                     var $type = $(this).find(':selected').attr('data-type');
-                    var $count = $(this).find(':selected').attr('data-count')
+                    var $count = $(this).find(':selected').attr('data-count');
+                    var $val = $(this).find(':selected').attr('value');
+
+                    $('#optimizer').removeClass();
+                    $('#optimizer').addClass($val );
 
                     $('#typetxt').html('');
                     $('#typetxt').html($type);
+
+                    $('legend').html('');
+                    $('legend').html($val);
 
                     $("#demo1").simplyCountable({
 
@@ -79,13 +86,8 @@
                         maxCount: $count
 
                     });
-
-
                 });
-
                 $("#demo1").simplyCountable();
-
-
             });
         </script>
     </body>
