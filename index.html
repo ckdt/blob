@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Blob</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Blob" />
+		<meta name="keywords" content="text length, online generator" />
+		<meta name="author" content="CKDT" />
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+    </head>
+    <body>
+        <div>
+        <select class="cs-select cs-skin-border">
+        	<option value="" disabled selected>Preferred contact method</option>
+        	<option value="email" data-type="words" data-count="20">E-Mail</option>
+        	<option value="twitter" data-type="characters" data-count="120">Twitter</option>
+        	<option value="linkedin" data-type="words" data-count="3">LinkedIn</option>
+        </select>
+
+        </div>
+
+        <div>
+
+        <fieldset><legend>Demo 1</legend>
+        <p>You have <span id="counter"></span> <span id="typetxt"></span> left.</p>
+        <p><textarea id="demo1" cols="50" rows="4"></textarea></p>
+        <p><input type="submit" value="Submit"></p>
+        </fieldset>
+
+    </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/jquery.simplyCountable.js"></script>
+
+        <!--
+        <script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx(
+                        el,
+                        {
+                            onChange : function( val ) { console.log( this ); return false; }
+                        }
+                    );
+
+				} );
+			})();
+		</script>
+-->
+        <script>
+            $(function() {
+
+                $("select").change(function(){
+                    var $type = $(this).find(':selected').attr('data-type');
+                    var $count = $(this).find(':selected').attr('data-count')
+
+                    $('#typetxt').html('');
+                    $('#typetxt').html($type);
+
+                    $("#demo1").simplyCountable({
+
+                        countType: $type,
+                        maxCount: $count
+
+                    });
+
+
+                });
+
+                $("#demo1").simplyCountable();
+
+
+            });
+        </script>
+    </body>
+</html>
