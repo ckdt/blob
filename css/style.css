@@ -49,7 +49,7 @@ border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     border: none;
 }
 
-#tweet,#domain,#facebook {
+#tweet,#domain,#facebook,#email {
     margin: 20px 0;
     padding: 0px;
     background: #fff;
@@ -62,19 +62,21 @@ border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 
 #tweet header,
 #domain header,
-#facebook header{
+#facebook header,
+#email header{
     padding: 20px 20px 0px 20px;
 }
 
 #tweet .container,
 #domain .container,
-#facebook .container{
+#facebook .container,
+#email .container{
     padding: 0px 20px 0px 20px;
 }
 
-#domain .container{
+#domain .container,
+#email .container{
     padding: 20px 20px 0px 20px;
-
 }
 
 #tweet header{
@@ -190,6 +192,35 @@ border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     resize: none;
 }
 
+
+#email ul{
+    margin:0;
+    padding:0;
+    display:block;
+    clear:left;
+    list-style-type:none;
+}
+#email ul li{
+    float:left;
+    margin-right:10px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 60px;
+    height:60px;
+    color: #333;
+}
+
+#email .optimizer textarea{
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 40px;
+    max-width:430px;
+    padding: 10px 20px;
+    resize: none;
+}
+
+
+
 .container{
     overflow: hidden;
     color:#fff;
@@ -197,10 +228,11 @@ border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 
 #tweet footer,
 #domain footer,
-#facebook footer{
+#facebook footer,
+#email footer{
     padding:0;
     margin: 20px 0 0 0;
-    background:#f7f7f7;
+    background:#f9f9f9;
     overflow: hidden;
     border-top:1px solid #d0d1d5;
 }
