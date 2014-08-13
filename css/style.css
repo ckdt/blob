@@ -253,3 +253,24 @@ text-align: center;
 .twitter fieldset label{
     margin:0px auto;
 }
+
+#templates{
+    position: relative;
+}
+.template{
+    position: absolute;
+    display:none;
+}
+.active{
+}
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   width:100%;
+   background:#eee;
+   text-align: center;
+   font-size: 12px; 
+}
