@@ -93,6 +93,7 @@ body{
     padding: 0px;
     background: #fff;
     width: 100%;
+    height: auto;
     border: 1px solid;
     border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     -webkit-border-radius: 3px;
@@ -606,7 +607,7 @@ form {margin-bottom:30px;}
 text-align: center;
 }
 
-/*
+
 #footer {
    position:fixed;
    left:0px;
@@ -617,4 +618,3 @@ text-align: center;
    text-align: center;
    font-size: 12px;
 }
-*/
