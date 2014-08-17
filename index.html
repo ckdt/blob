@@ -6,14 +6,14 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>Blob</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Blob" />
-		<meta name="keywords" content="text length, online generator" />
-		<meta name="author" content="CKDT" />
+        <meta name="keywords" content="text length, online generator" />
+        <meta name="author" content="CKDT" />
 
         <link rel="stylesheet" type='text/css' href="css/normalize.css">
         <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600'>
@@ -30,110 +30,218 @@
         </header>
 
         <section id="intro">
-            <h1>Optimize your texts to get the ideal length for everything online.</h1>
+            <h1>Optimize your texts to get the ideal length for everything online</h1>
             <p> Phasellus semper fermentum sagittis. Quisque eget vestibulum urna. Integer vehicula, eros nec vulputate imperdiet, lorem sem adipiscing massa, sit amet volutpat orci mauris vel metus. Suspendisse eget tempor leo. Vivamus scelerisque est nec euismod adipiscing. Duis id tempor libero. Suspendisse potenti. </p>
         </section>
 
-        <section id="tweet">
+        <section id="optimizer">
             <header>
-                <ul>
-                    <li class="profile-picture"><img src="http://placekitten.com/g/32/32"></li>
-                    <li class="profile-name">@blob</li>
-                    <li class="date">4 Aug</li>
-                </ul>
+                <select id="optimize-type">
+                    <option value="" disabled selected>Let's optimize a...</option>
+                    <option value="tweet"
+                            data-type="characters"
+                            data-count="100"
+                            data-engagement="17%"
+                            data-cols="50"
+                            data-rows="3"
+                            data-placeholder="Hey @you, Enter the text for your #tweet here!">Tweet</option>
+                    <option value="facebook"
+                            data-type="characters"
+                            data-count="40"
+                            data-engagement="86%"
+                            data-cols="50"
+                            data-rows="3"
+                            data-placeholder="What's on your mind?">Facebook post</option>
+                    <option value="headline"
+                            data-type="words"
+                            data-count="6"
+                            data-engagement="%"
+                            data-cols="50"
+                            data-rows="2"
+                            data-placeholder="Content is king.">Headline</option>
+                    <option value="blog"
+                            data-type="words"
+                            data-count="1600"
+                            data-engagement="%"
+                            data-cols="50"
+                            data-rows="5"
+                            data-placeholder="The interesting part of your post starts here...">Blog post</option>
+                    <option value="title"
+                            data-type="characters"
+                            data-count="55"
+                            data-engagement="%"
+                            data-cols="50"
+                            data-rows="1"
+                            data-placeholder="Your Website | The page you're looking at">Title tag</option>
+                    <option value="email"
+                            data-type="characters"
+                            data-count="34"
+                            data-engagement="%"
+                            data-cols="50"
+                            data-rows="1"
+                            data-placeholder="Your enaging subject...">E-mail subject</option>
+                    <option value="domain"
+                            data-type="characters"
+                            data-count="8"
+                            data-engagement="%"
+                            data-cols="30"
+                            data-rows="1"
+                            data-placeholder="website">Domain name</option>
+                </select>
             </header>
-            <div class="container">
-                <div class="optimizer">
-                    <textarea cols="50" rows="3" placeholder="Hey @you, Enter the text for your #tweet here!"></textarea>
+            <div id="templates">
+
+                <!-- template: TWEET -->
+                <div id="tweet" class="template">
+                    <div class="header">
+                        <ul>
+                            <li class="profile-picture"><img src="http://placekitten.com/g/32/32"></li>
+                            <li class="profile-name">@blob</li>
+                            <li class="date">4 Aug</li>
+                        </ul>
+                    </div>
+                    <div class="optimize-container">
+                        <!-- The optimize-form will be appended here -->
+                    </div>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <footer>
-                <button> Copy to clipboard </button>
-                <div class="engagement"> 17% </div>
-            </footer>
-        </section>
 
-        <section id="domain">
-            <div class="container">
-                <ul>
-                    <li class="favicon"><img src="http://placekitten.com/g/60/60"></li>
-                    <li>http://</li>
-                    <li>
-                        <div class="optimizer">
-                            <textarea cols="50" rows="1" placeholder="domain"></textarea>
-                        </div>
-                    </li>
-                    <li>
-                        .com
-                    </li>
-                </ul>
-            </div>
-            <footer>
-                <button> Copy to clipboard </button>
-            </footer>
-        </section>
-
-        <section id="facebook">
-            <header>
-                <ul>
-                    <li class="profile-picture"><img src="http://placekitten.com/g/40/40"></li>
-                    <li class="profile-name">blob <br> <span class="date">4 Aug</span></li>
-                </ul>
-            </header>
-            <div class="container">
-                <div class="optimizer">
-                    <textarea cols="50" rows="3" placeholder="What's on your mind?"></textarea>
+                <!-- template: Facebook -->
+                <div id="facebook" class="template">
+                    <div class="header">
+                        <ul>
+                            <li class="profile-picture"><img src="http://placekitten.com/g/40/40"></li>
+                            <li class="profile-name">blob <br> <span class="date">4 Aug</span></li>
+                        </ul>
+                    </div>
+                    <div class="optimize-container">
+                        <!-- The optimize-form will be appended here -->
+                    </div>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- template: E-Mail -->
+                <div id="email" class="template">
+                    <ul class="inline">
+                        <li class="label">to: <strong>hello@blob.com</strong></li>
+                        <li>
+                            <div class="optimize-container">
+                                <!-- The optimize-form will be appended here -->
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- template: Domain -->
+                <div id="domain" class="template">
+                    <ul class="inline">
+                        <li class="favicon"><img src="http://placekitten.com/g/60/60"></li>
+                        <li>http://</li>
+                        <li>
+                            <div class="optimize-container">
+                                <!-- The optimize-form will be appended here -->
+                            </div>
+                        </li>
+                        <li>
+                            .com
+                        </li>
+                    </ul>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- template: Title -->
+                <div id="title" class="template">
+                    <ul class="inline">
+                        <li>&lt; title &gt;</li>
+                        <li>
+                            <div class="optimize-container">
+                                <!-- The optimize-form will be appended here -->
+                            </div>
+                        </li>
+                        <li>
+                            &lt; &#47;title &gt;
+                        </li>
+                    </ul>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- template: Headline -->
+                <div id="headline" class="template">
+                    <ul class="inline">
+                        <li>
+                            <div class="optimize-container">
+                                <!-- The optimize-form will be appended here -->
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- template: Blog post -->
+                <div id="blog" class="template">
+                    <div class="header">
+                        <ul>
+                            <li class="profile-name">Blob's Blog<br> <span class="date">4 Aug</span></li>
+                        </ul>
+                    </div>
+                    <div class="optimize-container">
+                        <!-- The optimize-form will be appended here -->
+                    </div>
+                    <div class="result-footer">
+                        <ul>
+                            <li class="result-utils"> <button class="copy-btn icon icon-clippy" data-clipboard-target="optimize-area"> Copy </button> </li>
+                            <li class="result-feedback"></li>
+                            <li class="result-engagement"> <div class="engagement icon icon-graph"></div></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+
             <footer>
-                <button> Copy to clipboard </button>
-                <div class="engagement">86% </div>
             </footer>
-        </section>
-
-
-        <section id="email">
-            <div class="container">
-                <ul>
-                    <li class="label">to: <strong>hello@blob.com</strong></li>
-                    <li>
-                        <div class="optimizer">
-                            <textarea cols="50" rows="1" placeholder="Subject to change"></textarea>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <footer>
-                <button> Copy to clipboard </button>
-                <div class="engagement">12.2% open; 4% clicks</div>
-            </footer>
-        </section>
-
-
-        <section id="form">
-            <select>
-                <option value="" disabled selected>Let's optimize a...</option>
-                <option value="domain" data-type="characters" data-count="8">Domain name</option>
-                <option value="twitter" data-type="characters" data-count="100">Tweet</option>
-                <option value="facebook" data-type="characters" data-count="40">Facebook post</option>
-                <option value="e-mail" data-type="characters" data-count="34">E-mail subject</option>
-                <option value="blog" data-type="words" data-count="1600">Blog post</option>
-                <option value="title-tag" data-type="characters" data-count="55">Title tag</option>
-                <option value="headline" data-type="words" data-count="6">Headline</option>
-            </select>
-            <div id="optimizer" class="fb">
-                <fieldset><legend>Demo 1</legend>
-                <p>You have <span id="counter"></span> <span id="typetxt"></span> left.</p>
-                <p><textarea id="demo1" cols="50" rows="4"></textarea></p>
-
-                <p><button id="my-button_textarea" data-clipboard-target="demo1">Copy to Clipboard</button></p>
-
-                </fieldset>
-            </div>
 
         </section>
 
-        <footer>
+        <footer id="footer">
             <p> Brought to you by the lovely folks of CKDT </p>
         </footer>
 
@@ -144,53 +252,66 @@
         <script src="js/ZeroClipboard.min.js"></script>
 
         <script>
+
             $(function() {
 
-                 var client = new ZeroClipboard( $("#my-button_textarea") );
+                var client = new ZeroClipboard( $(".copy-btn") );
 
-      client.on( 'ready', function(event) {
-        // console.log( 'movie is loaded' );
+                client.on( 'ready', function(event) {
+                    client.on( 'copy', function(event) {
+                    var text = document.getElementById('optimize-area').value;
+                    var windowsText = text.replace(/\n/g, '\r\n');
+                        event.clipboardData.setData('text/plain', windowsText);
+                    });
 
-        client.on( 'copy', function(event) {
-            var text = document.getElementById('demo1').value;
-            var windowsText = text.replace(/\n/g, '\r\n');
-            event.clipboardData.setData('text/plain', windowsText);
-        } );
-
-        client.on( 'aftercopy', function(event) {
-          console.log('Copied text to clipboard: ' + event.data['text/plain']);
-        } );
-      } );
-
-      client.on( 'error', function(event) {
-        // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
-        ZeroClipboard.destroy();
-      } );
-
-
-
-                $("select").change(function(){
-                    var $type = $(this).find(':selected').attr('data-type');
-                    var $count = $(this).find(':selected').attr('data-count');
-                    var $val = $(this).find(':selected').attr('value');
-
-                    $('#optimizer').removeClass();
-                    $('#optimizer').addClass($val );
-
-                    $('#typetxt').html('');
-                    $('#typetxt').html($type);
-
-                    $('legend').html('');
-                    $('legend').html($val);
-
-                    $("#demo1").simplyCountable({
-
-                        countType: $type,
-                        maxCount: $count
-
+                    client.on( 'aftercopy', function(event) {
+                        console.log('Copied text to clipboard: ' + event.data['text/plain']);
                     });
                 });
-                $("#demo1").simplyCountable();
+
+                client.on( 'error', function(event) {
+                    ZeroClipboard.destroy();
+                });
+
+                $("select").change(function(){
+
+                    // Retrieve Attributes
+                    var $type = $(this).find(':selected').attr('data-type');
+                    var $count = $(this).find(':selected').attr('data-count');
+                    var $engagement = $(this).find(':selected').attr('data-engagement');
+                    var $cols = $(this).find(':selected').attr('data-cols');
+                    var $rows = $(this).find(':selected').attr('data-rows');
+                    var $placeholder = $(this).find(':selected').attr('data-placeholder');
+                    var $val = $(this).find(':selected').attr('value');
+
+                    // Create html elements
+                    var htmlform = '<textarea id="optimize-area" cols="'+$cols+'" rows="'+$rows+'" placeholder="'+$placeholder+'"></textarea>';
+                        htmlfooter = '<p>Ideally, you have <span id="counter"></span> <span id="typetxt">'+$type+'</span> left.</p>';
+
+                    var newID = '#' + $val;
+
+                    // Reset current
+                    $('.active').find('.optimize-container').empty();
+                    $('.active').find('.result-feedback').empty();
+                    $('.active').find('.engagement').empty();
+                    $('.active').hide();
+                    $('.active').removeClass('active');
+
+                    // Create new
+                    $(newID).find('.optimize-container').append(htmlform);
+                    $(newID).find('.result-feedback').html(htmlfooter);
+                    $(newID).find('.engagement').html($engagement);
+                    $(newID).show();
+                    $(newID).addClass('active');
+
+                    // Init Counter
+                    $("#optimize-area").simplyCountable({
+                        counter: '#counter',
+                        countType: $type,
+                        maxCount: $count
+                    });
+
+                });
             });
         </script>
     </body>
