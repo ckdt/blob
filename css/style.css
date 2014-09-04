@@ -73,12 +73,53 @@ box-sizing: border-box;
 
 
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     background: #f9f9f9;
     color: #333;
     max-width: 640px;
     margin:0px auto;
+}
+
+h1{
+    margin:0;
+    padding:0;
+}
+
+h1 img{
+    margin:20px 0 0 0;
+    padding:0;
+}
+
+h2{
+    margin: 0 20px;
+    padding:0 0 10px 0;
+    font-size: 34px;
+    font-weight: normal;
+}
+
+a{
+    text-decoration: none;
+    color:#000;
+}
+
+a:hover{
+    color: #431c7a;
+}
+
+#intro {
+    margin-left:20px;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 520px;
+}
+#intro em{
+    font-style: normal;
+}
+
+select{
+    display:block;
+    margin:0 20px;
 }
 
 #templates{
